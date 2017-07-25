@@ -1,0 +1,6 @@
+web: rails s
+scheduler: rails resque:scheduler
+mailcatcher: mailcatcher
+worker: VERBOSE=1 RESQUE_TERM_TIMEOUT=1 TERM_CHILD=1 QUEUE=* rails environment resque:work
+resque-web: resque-web -F
+redis: redis-server
